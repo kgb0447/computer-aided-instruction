@@ -1,11 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit'
 import courseReducer from "../reducers/course_slice"
+import  mapped_courseReducer from '../reducers/mapped_course_slice'
 // ...
 
 const store = configureStore({
   reducer: {
     myCourse: courseReducer,
-   
+    mapped_course: mapped_courseReducer
   }
 })
 

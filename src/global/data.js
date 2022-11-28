@@ -3,7 +3,11 @@ export const courses = [
         Subject: "HTML",
         Topics: [
             {
-                Title: "Document Object Dom",
+                Title: "Topic1",
+                Desc: "hahhahahahahahhaahhahaha"
+            },
+            {
+                Title: "Topic2",
                 Desc: "hahhahahahahahhaahhahaha"
             }
         ]
@@ -13,12 +17,13 @@ export const courses = [
         Subject: "CSS",
         Topics: [
             {
-                Title: "CSSS",
+                Title: "Topic3",
                 Desc: "hahhahahahahahhaahhahaha"
             }
         ]
 
-    },{
+    },
+    {
         Subject: "JavaScript",
         Topics: [
             {

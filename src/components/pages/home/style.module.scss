@@ -12,6 +12,14 @@
         position: absolute;
 
     }
+    img{
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform:translate(-50%, -47%);
+        opacity: 0.65;
+        z-index:1;
+    }
     
     .content_wrapper{
         position: relative;
@@ -22,6 +30,7 @@
         width: 80%;
         height: 80%;
         margin: auto;
+        z-index: 100;
         // background: url('../../../../public/img/homepage_bg.png') center no-repeat;
         // background-size: 100% 100%;
         // background-blend-mode: overlay;

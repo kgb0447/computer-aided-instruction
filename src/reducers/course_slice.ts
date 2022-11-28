@@ -1,6 +1,5 @@
 import { createSlice,PayloadAction } from "@reduxjs/toolkit";
 import {RootState} from '../store/store'
-import {courses} from '../components/global/data'
 
 interface  Course_type {
     value: any,

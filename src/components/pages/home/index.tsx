@@ -3,7 +3,7 @@ import { ImgConfig } from '../../../config/homepage/ImgConfig'
 import { Video_Config } from '../../../config/homepage/Video_Config'
 import { useEffect, useState } from "react"
 import styles from './style.module.scss'
-import { courses } from "../../global/data"
+import { courses } from "../../../global/data"
 import {useNavigate,useParams} from 'react-router-dom'
 import { useAppDispatch,useAppSelector } from "../../../reducers/hooks"
 // import { selectCourse } from "../../../reducers/course_slice"
@@ -30,8 +30,9 @@ export const Homepage = () => {
                     <button key={index} onClick={()=>handleSelectCourse(item.Subject)}>{item.Subject}</button>
                 ))
             }
-            ddd
+            
             </div>
+            <img src={ImgConfig.home_main_bg} alt="" />
         </div>
     )
 }

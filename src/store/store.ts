@@ -6,7 +6,7 @@ import  mapped_courseReducer from '../reducers/mapped_course_slice'
 const store = configureStore({
   reducer: {
     myCourse: courseReducer,
-    mapped_course: mapped_courseReducer
+    myMappedCourse: mapped_courseReducer
   }
 })
 

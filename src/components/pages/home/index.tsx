@@ -6,18 +6,30 @@ import styles from './style.module.scss'
 import { courses } from "../../../global/data"
 import {useNavigate,useParams} from 'react-router-dom'
 import { useAppDispatch,useAppSelector } from "../../../reducers/hooks"
-// import { selectCourse } from "../../../reducers/course_slice"
 import { selected } from "../../../reducers/course_slice"
 import { Header } from "./components/header"
+import { setSelectedCourse } from '../../../reducers/mapped_course_slice'
+
 export const Homepage = () => {
     const selected_Course = useAppSelector(state => state.myCourse.value);
     const navigate = useNavigate();
+    const dispatch = useAppDispatch();
+    const subjects = useAppSelector(state => state.myMappedCourse.courseSubject)
+    const x = useAppSelector(state => state.myMappedCourse.selectedCourse)
+    console.log(x,"test")
 
-
+    console.log(courses[1].Topics,"TTTTTT")
     
     const handleSelectCourse = (val: any) =>{
-        return navigate(`/mainpage/${val}`)        
+        const selected = subjects.filter(data => data === val)[0];
+        const selectedIndex = subjects.indexOf(selected);
+        return (
+            navigate(`/mainpage/${val}`),
+            console.log(selectedIndex,"Trrrrr"),
+            dispatch(setSelectedCourse(selectedIndex))
+        )
     }
+
 
 
     return(
@@ -26,8 +38,8 @@ export const Homepage = () => {
             <video src={Video_Config.home_bg_video} autoPlay muted loop></video>
             <div className={styles.content_wrapper}>
                 {
-                courses.map((item,index)=>(
-                    <button key={index} onClick={()=>handleSelectCourse(item.Subject)}>{item.Subject}</button>
+                subjects.map((item,index)=>(
+                    <button key={index} onClick={()=>handleSelectCourse(item)}>{item}</button>
                 ))
             }
             

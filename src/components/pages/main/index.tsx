@@ -4,34 +4,67 @@ import styles from './style.module.scss'
 import { courses } from "../../../global/data";
 import { useAppDispatch,useAppSelector } from "../../../reducers/hooks";
 // import {setMappedTopic} from '../../../reducers/mapped_course_slice'
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import { stringify } from "querystring";
 import { Left_sidebar } from "./left_sidebar";
+import { Header } from "./header";
 export const MainPage = () =>{
     const navigate = useNavigate()
     const dispatch = useAppDispatch();
-    const selected_mapped_course = useAppSelector(state => state.mapped_course.course_topics)
+    const selectedCourse = useAppSelector(state=> state.myMappedCourse.selectedCourse)
 
     const handle_route_home = () =>{
         navigate('/')
         dispatch(selected(""));
     }
-
-    // useEffect(() => {
-    //  dispatch(setMappedTopic())
-    // }, [])
-    console.log(selected_mapped_course,"Test")
     
     return(
         <div className={styles.main_page}>
-            {/* <button onClick={()=> dispatch(setMappedTopic())}>ddd</button> */}
-            {/* {selected_mapped_course.map((item:any,index)=> (
-                <div>
-                    <h2>{}</h2>
+            <Header/> 
+            <section>   
+                <Left_sidebar/> 
+                <div className={styles.wrapper}>  
+                {
+                    selectedCourse.map((item,index)=>(
+                        <React.Fragment key={index}>
+                            <header>
+                                {item.Title}
+                            </header>
+                            <div className={styles.topic_desc}>{item.Desc}</div>
+                        </React.Fragment>
+                    ))
+                }
+                {
+                    selectedCourse.map((item,index)=>(
+                        <React.Fragment key={index}>
+                            <header>
+                                {item.Title}
+                            </header>
+                            <div className={styles.topic_desc}>{item.Desc}</div>
+                        </React.Fragment>
+                    ))
+                }
+                {
+                    selectedCourse.map((item,index)=>(
+                        <React.Fragment key={index}>
+                            <header>
+                                {item.Title}
+                            </header>
+                            <div className={styles.topic_desc}>{item.Desc}</div>
+                        </React.Fragment>
+                    ))
+                }{
+                    selectedCourse.map((item,index)=>(
+                        <React.Fragment key={index}>
+                            <header>
+                                {item.Title}
+                            </header>
+                            <div className={styles.topic_desc}>{item.Desc}</div>
+                        </React.Fragment>
+                    ))
+                }
                 </div>
-            ))} */}
-            <Left_sidebar/>
-           
+            </section>    
         </div>
     )
 }

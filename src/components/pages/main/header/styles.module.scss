@@ -1,0 +1,40 @@
+@import '../../../../global/style.module.scss';
+
+.header{
+    display: flex;
+    flex: 0 0 auto;
+    width: 100%;
+    height: $main_header_height;
+    background: $headere_bg;
+    color: #fff;
+
+    .home_icon{
+        color: #ffff;
+        font-size: 30px;
+        padding: 0px  5px 5px 5px;
+        cursor: pointer;
+    }
+
+    nav{
+        display: flex;
+        padding: 0 5px;
+        align-items: center;
+        margin-left: auto;
+
+        div{
+            margin-right: 10px;
+            color: #ffff;
+            cursor: pointer;
+            font: normal normal 700 20px DINPro;
+
+            &:hover{
+                color: $blue_theme_color;
+            }
+
+            &:last-child{
+                margin-right: 0;
+            }
+        }
+        
+    }
+}

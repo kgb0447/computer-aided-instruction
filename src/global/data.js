@@ -3,11 +3,15 @@ export const courses = [
         Subject: "HTML",
         Topics: [
             {
-                Title: "Topic1",
+                Title: "HTML1 TOpic1",
                 Desc: "hahhahahahahahhaahhahaha"
             },
             {
-                Title: "Topic2",
+                Title: "HTML1 TOpic2",
+                Desc: "hahhahahahahahhaahhahaha"
+            },
+            {
+                Title: "HTML1 TOpic3",
                 Desc: "hahhahahahahahhaahhahaha"
             }
         ]
@@ -17,7 +21,15 @@ export const courses = [
         Subject: "CSS",
         Topics: [
             {
-                Title: "Topic3",
+                Title: "CSS Topic1",
+                Desc: "hahhahahahahahhaahhahaha"
+            },
+            {
+                Title: "CSS Topic2",
+                Desc: "hahhahahahahahhaahhahaha"
+            },
+            {
+                Title: "CSS Topic3",
                 Desc: "hahhahahahahahhaahhahaha"
             }
         ]
@@ -27,7 +39,15 @@ export const courses = [
         Subject: "JavaScript",
         Topics: [
             {
-                Title: "Data Structure",
+                Title: "JavaScript Topic1",
+                Desc: "hahhahahahahahhaahhahaha"
+            },
+            {
+                Title: "JavaScript Topic2",
+                Desc: "hahhahahahahahhaahhahaha"
+            },
+            {
+                Title: "JavaScript Topic3",
                 Desc: "hahhahahahahahhaahhahaha"
             }
         ]

@@ -6,22 +6,28 @@
     height: 100vh;
     flex: 0 0 auto;
     box-sizing: border-box;
+   
+
+    
 
     section{
-        width: calc(100% - $sidebar_width);
+        width: 100vw;
         height: calc(100vh - $main_header_height);
         display: flex;
         flex: 0 0 auto;
         overflow: hidden;
         
+        
 
         .wrapper{
             border-left: inset 0.8px $blue_theme_color;
             margin-bottom: 20px;
-            width: calc(100% - $sidebar_width);
+            width: 100%;
             height: calc(100vh - $main_header_height - 0.5vh);
             overflow-y: auto;
 
+            
+            
             &::-webkit-scrollbar{
                 width: 6px;
                 background: $main_header_height;
@@ -47,6 +53,8 @@
                 width:auto;
                 background: #fff;
             }
+            
         }
     }
+    
 }

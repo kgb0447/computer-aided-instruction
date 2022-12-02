@@ -19,6 +19,7 @@ export const Left_sidebar = () =>{
   console.log(selectedCourse,"Statet")
   console.log(courses[1],"Test data");
   console.log(courseSubjects.indexOf(myState),"ss")
+ 
 
     return(
         <div className={styles.left_sidebar}>

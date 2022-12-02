@@ -3,6 +3,7 @@
     width: $sidebar_width;
     height: calc(100vh - $main_header_height);
     box-sizing: border-box;
+    flex-shrink: 0;
 
     ul{
         width: 100%;

@@ -1,42 +1,37 @@
-import { useNavigate } from "react-router-dom"
-import { selected } from "../../../reducers/course_slice";
 import styles from './style.module.scss'
-import { useAppDispatch,useAppSelector } from "../../../reducers/hooks";
-import React, { useEffect } from "react";
-import { Left_sidebar } from "./left_sidebar";
-import { Header } from "./header";
-import { FloatRightCards } from "../home/components/floatRightCards";
+import { useAppSelector } from "../../../reducers/hooks";
 import { useRef } from "react";
-export const MainPage = () =>{
-    const navigate = useNavigate()
-    const dispatch = useAppDispatch();
-    const selectedCourse = useAppSelector(state=> state.myMappedCourse.selectedCourse)
-    const topicRef = useRef<any>([])
+import { Left_sidebar } from "./componets/left_sidebar/index";
+import { Header } from "./componets/header";
+import { ScrollContext } from "../home/context/scrollContext";
+import { FloatRightCards } from "./componets/floatRightCards";
 
-    useEffect(()=>{
-        // return topicRef.current.splice(0,selectedCourse.length)
-    },[])
-    const handle_route_home = () =>{
-        navigate('/')
-        dispatch(selected(""));
-    }
-    const scrollToRef = (e: any) => {
-        window.scrollTo({ 
-          top: e.current.offsetTop, 
-          behavior: "smooth" 
+export  interface UserProps{
+    scrollHandler: any,
+    handler:any
+}
+export const MainPage = () =>{
+    const itemsRef = useRef<any[]>([]);
+    const selectedCourse = useAppSelector(state=> state.myMappedCourse.selectedCourse)
+
+    const scrollHandler = (element:any) =>{
+        itemsRef.current[element].scrollIntoView({
+            block:"start",
+            behavior:"smooth"
         });
-      }
-    console.log(topicRef.current,"ddd")
+    } 
+
     return(
         <div className={styles.main_page}>
+            <ScrollContext.Provider value={{scrollHandler,itemsRef}}>
             <Header/> 
             <section>   
                 <Left_sidebar/> 
                 <div className={styles.wrapper}>  
                 {
                     selectedCourse.map((item,index)=>(
-                        <div key={index}>
-                            <header ref={(el:any) => topicRef.current[index] = el}>
+                        <div className={styles.item_wrapper} key={index} ref={(el:any) => itemsRef.current[index] = el}>
+                            <header>
                                 {item.Title}
                             </header>
                             <div className={styles.topic_desc}>{item.Desc}</div>
@@ -45,10 +40,8 @@ export const MainPage = () =>{
                 }
                 </div>
                 <FloatRightCards/>
-
-                
             </section>
-            
+            </ScrollContext.Provider>
         </div>
     )
 }

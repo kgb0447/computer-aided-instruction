@@ -2,8 +2,9 @@ import { useRoutes } from "react-router-dom"
 import { Homepage } from "../pages/home"
 import { ErrorPage } from "../pages/errorpage/ErrorPage"
 import { MainPage } from "../pages/main"
+
 export const Routes =()=>{
-    const element = useRoutes(
+    const myRuotes = useRoutes( 
         [
             {
                 path: '/',
@@ -21,5 +22,5 @@ export const Routes =()=>{
         ]
         
     )
-    return element;
+    return myRuotes;
 } 

@@ -15,9 +15,7 @@
         height: calc(100vh - $main_header_height);
         display: flex;
         flex: 0 0 auto;
-        overflow: hidden;
-        
-        
+        overflow: hidden; 
 
         .wrapper{
             border-left: inset 0.8px $blue_theme_color;
@@ -25,9 +23,10 @@
             width: 100%;
             height: calc(100vh - $main_header_height - 0.5vh);
             overflow-y: auto;
+            :last-child{
+                height: 100%;
+            }
 
-            
-            
             &::-webkit-scrollbar{
                 width: 6px;
                 background: $main_header_height;
@@ -41,20 +40,24 @@
                 background-color: blue;
                 border-radius: 10px;
             }
-            
-            header{
-                background-color: pink;
-                font: normal normal 700 24px DINPro;
-                padding: 5px;
+            .item_wrapper{
+                header{
+                    background-color: pink;
+                    font: normal normal 700 24px DINPro;
+                    padding: 5px;
+                }
+                
+                .topic_desc{
+                    padding: 5px;
+                    word-break: break-word;
+                    width:auto;
+                    background: #fff;
+                    height: 400px; 
+
+                    
+                }
+               
             }
-            .topic_desc{
-                padding: 5px;
-                word-break: break-word;
-                width:auto;
-                background: #fff;
-            }
-            
         }
     }
-    
 }

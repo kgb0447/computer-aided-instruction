@@ -11,6 +11,7 @@ export  interface UserProps{
     handler:any
 }
 export const MainPage = () =>{
+
     const itemsRef = useRef<any[]>([]);
     const selectedCourse = useAppSelector(state=> state.myMappedCourse.selectedCourse)
 
@@ -27,10 +28,10 @@ export const MainPage = () =>{
             <Header/> 
             <section>   
                 <Left_sidebar/> 
-                <div className={styles.wrapper}>  
+                <div className={styles.wrapper} >  
                 {
                     selectedCourse.map((item,index)=>(
-                        <div className={styles.item_wrapper} key={index} ref={(el:any) => itemsRef.current[index] = el}>
+                        <div className={styles.item_wrapper} key={index} ref={(el:any) => itemsRef.current[index] = el} >
                             <header>
                                 {item.Title}
                             </header>

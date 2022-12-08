@@ -15,17 +15,12 @@ export const Homepage = () => {
     const navigate = useNavigate();
     const dispatch = useAppDispatch();
     const subjects = useAppSelector(state => state.myMappedCourse.courseSubject)
-    
-
-
+    const [scrollHeightState,setScrollHeightState] = useState(subjects.slice(0,subjects.length));
     const [mySelected,setMySelected] = useState(0)
-    const [scrollHeight,setScrollHeight] = useState<any[]>(subjects.slice(0,subjects.length))
+   
     const itemRef = useRef([])
 
-    // useEffect(()=>{
-    //     itemRef.current = itemRef.current.slice(0,subjects.length)
-    //     setMySelected(0)
-    // },[])
+    
 
     // useEffect(()=>{
     //     scrollHeight.map((item,index)=>(

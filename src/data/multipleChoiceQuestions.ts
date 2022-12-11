@@ -36,7 +36,7 @@ export const multipleChoiceQuestions  = [
                 Answer: "Cascading Style Sheet"
             },
             {
-                Question: "What does HTML stands forssss?",
+                Question: "What does CSS stands forssss?",
                 Choices: ["Hyper Text Markup Langauge","Higher Text Markup Langauge","Hyper Text Makeup Langauge","Hyper Text Markup Link"],
                 Answer: "Hyper Text Markup Langauge"
             }
@@ -51,7 +51,7 @@ export const multipleChoiceQuestions  = [
                 Answer: "Hyper Text Markup Langauge"
             },
             {
-                Question: "What does HTML stands forssss?",
+                Question: "What does JavaScript stands forssss?",
                 Choices: ["Hyper Text Markup Langauge","Higher Text Markup Langauge","Hyper Text Makeup Langauge","Hyper Text Markup Link"],
                 Answer: "Hyper Text Markup Langauge"
             }

@@ -1,48 +1,71 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { multipleChoiceQuestions } from '../../../../data/multipleChoiceQuestions'
 import styles from './style.module.scss'
 import useArrayMapper from '../../../../hooks/useArrayMapper'
 import { Header } from '../../main/componets/header';
-import { type } from '@testing-library/user-event/dist/type';
+import { notInitialized } from 'react-redux/es/utils/useSyncExternalStore';
 
 export default function MultipleChoice() {
   
-  const quizQuestion = useArrayMapper(multipleChoiceQuestions, "Question");
-  const quizChoices = useArrayMapper(multipleChoiceQuestions, "Choices");
+  // const quizQuestion = useArrayMapper(multipleChoiceQuestions, "Question");
+  // const quizChoices = useArrayMapper(multipleChoiceQuestions, "Choices");
+  const [selectedQuizCat,setSelectedQuizCat] = useState<any>(null)
+ 
 
-  const myData = ['a','b','c','d'];
+  const handleSelectTopic = (value:any) =>{
+    const getIndexOfSelectedCategory =  multipleChoiceQuestions.filter((item:any)=> item === value)[0].Category;
+    const getMultipleChoiceQuestionsCategories = multipleChoiceQuestions.map((item:any) => item.Category)
+    const selectedIndex = getMultipleChoiceQuestionsCategories.indexOf(getIndexOfSelectedCategory);
+    setSelectedQuizCat(multipleChoiceQuestions[selectedIndex].Items)
+    
+  }
 
-const radioRef = useRef(null)
+
 const handleSubmit = (e:any)=>{
   e.preventDefault();
- 
   for(let value of e.target.children){
     if(value.checked){
-      console.log(value.value,"test")
+      console.log(value,"test")
     }
   }
-  
-  
+  console.log(e.target.children)
 }
+console.log(selectedQuizCat);
+
   return (
     <div className={styles.multipleChoice_container}>
       <Header/>
       <div className={styles.quiz_container}>
-        <div className={styles.question}>{quizQuestion}</div>
-        <div className={styles.choices_wrapper} >
-      <form action="submit" onSubmit={handleSubmit} ref={radioRef}>
+      <h1>Select Subject</h1>
       {
-        myData.map((item,index)=>(
+        multipleChoiceQuestions.map((item:any,index)=> (
           <React.Fragment key={index}>
-            <input type="radio" name='choices' value={item} />{item}
-            </React.Fragment>
+            <button onClick={()=>handleSelectTopic(item)}>{item.Category}</button>
+          </React.Fragment>
         ))
-        
+      },
+      <form action="submit" onSubmit={handleSubmit}>
+        {selectedQuizCat[0].Question}
+      {
+         selectedQuizCat !== null ? (
+          
+          selectedQuizCat.map((item:any,index:number)=>(
+            <React.Fragment key={index}>
+              <div>{item.Question}</div>
+              {
+                item.Choices.map((val:any,ind:any)=>(
+                  <React.Fragment key={ind}>
+                    <input type="radio" name="choices" value={val}/><span> {val}</span>
+                  </React.Fragment>
+                ))
+              }
+            </React.Fragment>
+          ))
+         ) : null
       }
-      <input type="submit" value="Submit" />
+        <input type="submit" value={"Test"}/>
       </form>
-       </div>
-      </div>
+        </div>
     </div>
   )
 }

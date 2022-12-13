@@ -8,6 +8,37 @@
         border: solid 0.5px gray;
         padding: 10px;
 
+        button{
+            width: 100px;
+            height: 50px;
+            margin-right: 10px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+
+            &:hover{
+                background-color: rgb(142, 173, 96);
+                color: #ffff;
+            }
+        }
+        .question_container{
+            width: 100%;
+            background: yellow;
+            display: flex;
+            flex-direction: column;
+
+            .choices_wrapper{
+                background: green;
+                display: flex;
+
+                input[type="radio"]{
+                    
+                    width: 15px;
+                    margin-right: 5px;
+                    cursor: pointer;
+                }
+            }
+        }
         .question{
             width: 100%;
             padding: 40px 10px;

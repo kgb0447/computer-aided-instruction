@@ -1,5 +1,12 @@
-
-export const multipleChoiceQuestions  = [
+interface multipleChoiceQuestionsTypes {
+    Category: string;
+    Items: {
+        Question:string;
+        Choices: string[];
+        Answer: string; 
+    }[];
+}
+export const multipleChoiceQuestions : multipleChoiceQuestionsTypes[] = [
     {
         Category: "HTML",
         Items:[
@@ -114,7 +121,37 @@ export const multipleChoiceQuestions  = [
                 Answer: "Cascading Style Sheet"
             },
             {
-                Question: "What does CSS stands forssss?",
+                Question: "What is Box Model?",
+                Choices: ["Hyper Text Markup Langauge","Higher Text Markup Langauge","Hyper Text Makeup Langauge","Hyper Text Markup Link"],
+                Answer: "Hyper Text Markup Langauge"
+            },
+            {
+                Question: "What is the difference between inline elements and block elements?",
+                Choices: ["Hyper Text Markup Langauge","Higher Text Markup Langauge","Hyper Text Makeup Langauge","Hyper Text Markup Link"],
+                Answer: "Hyper Text Markup Langauge"
+            },
+            {
+                Question: "What is the difference between Pseudo Classes and Id's?",
+                Choices: ["Hyper Text Markup Langauge","Higher Text Markup Langauge","Hyper Text Makeup Langauge","Hyper Text Markup Link"],
+                Answer: "Hyper Text Markup Langauge"
+            },
+            {
+                Question: "What is specificity on CSS?",
+                Choices: ["Hyper Text Markup Langauge","Higher Text Markup Langauge","Hyper Text Makeup Langauge","Hyper Text Markup Link"],
+                Answer: "Hyper Text Markup Langauge"
+            },
+            {
+                Question: "What is Grid?",
+                Choices: ["Hyper Text Markup Langauge","Higher Text Markup Langauge","Hyper Text Makeup Langauge","Hyper Text Markup Link"],
+                Answer: "Hyper Text Markup Langauge"
+            },
+            {
+                Question: "What is Flexbox?",
+                Choices: ["Hyper Text Markup Langauge","Higher Text Markup Langauge","Hyper Text Makeup Langauge","Hyper Text Markup Link"],
+                Answer: "Hyper Text Markup Langauge"
+            },
+            {
+                Question: "In Flex box, what does this property indicates? flex:1 0 auto",
                 Choices: ["Hyper Text Markup Langauge","Higher Text Markup Langauge","Hyper Text Makeup Langauge","Hyper Text Markup Link"],
                 Answer: "Hyper Text Markup Langauge"
             }
@@ -129,10 +166,41 @@ export const multipleChoiceQuestions  = [
                 Answer: "Hyper Text Markup Langauge"
             },
             {
-                Question: "What does JavaScript stands forssss?",
+                Question: "What are the data types in JavaScript?",
                 Choices: ["Hyper Text Markup Langauge","Higher Text Markup Langauge","Hyper Text Makeup Langauge","Hyper Text Markup Link"],
                 Answer: "Hyper Text Markup Langauge"
-            }
+            },
+            {
+                Question: "What is undeclared?",
+                Choices: ["Hyper Text Markup Langauge","Higher Text Markup Langauge","Hyper Text Makeup Langauge","Hyper Text Markup Link"],
+                Answer: "Hyper Text Markup Langauge"
+            },
+            {
+                Question: "What is currying?",
+                Choices: ["Hyper Text Markup Langauge","Higher Text Markup Langauge","Hyper Text Makeup Langauge","Hyper Text Markup Link"],
+                Answer: "Hyper Text Markup Langauge"
+            },
+            {
+                Question: "What is ES6?",
+                Choices: ["Hyper Text Markup Langauge","Higher Text Markup Langauge","Hyper Text Makeup Langauge","Hyper Text Markup Link"],
+                Answer: "Hyper Text Markup Langauge"
+            },
+            {
+                Question: "What does the symbol ... indicates in JavaScript?",
+                Choices: ["Hyper Text Markup Langauge","Higher Text Markup Langauge","Hyper Text Makeup Langauge","Hyper Text Markup Link"],
+                Answer: "Hyper Text Markup Langauge"
+            },
+            {
+                Question: "What is the difference between == and ===?",
+                Choices: ["Hyper Text Markup Langauge","Higher Text Markup Langauge","Hyper Text Makeup Langauge","Hyper Text Markup Link"],
+                Answer: "Hyper Text Markup Langauge"
+            },
+            {
+                Question: "What does the Array.prototpye.map do?",
+                Choices: ["Hyper Text Markup Langauge","Higher Text Markup Langauge","Hyper Text Makeup Langauge","Hyper Text Markup Link"],
+                Answer: "Hyper Text Markup Langauge"
+            },
+
         ]
     },
     {
@@ -144,7 +212,27 @@ export const multipleChoiceQuestions  = [
                 Answer: "Hyper Text Markup Langauge"
             },
             {
-                Question: "What does HTML stands forssss?",
+                Question: "What is state in react?",
+                Choices: ["Hyper Text Markup Langauge","Higher Text Markup Langauge","Hyper Text Makeup Langauge","Hyper Text Markup Link"],
+                Answer: "Hyper Text Markup Langauge"
+            },
+            {
+                Question: "What is memoization in React?",
+                Choices: ["Hyper Text Markup Langauge","Higher Text Markup Langauge","Hyper Text Makeup Langauge","Hyper Text Markup Link"],
+                Answer: "Hyper Text Markup Langauge"
+            },
+            {
+                Question: "What is High Order Components(HOC)?",
+                Choices: ["Hyper Text Markup Langauge","Higher Text Markup Langauge","Hyper Text Makeup Langauge","Hyper Text Markup Link"],
+                Answer: "Hyper Text Markup Langauge"
+            },
+            {
+                Question: "What is the difference between classbase component and functional base component?",
+                Choices: ["Hyper Text Markup Langauge","Higher Text Markup Langauge","Hyper Text Makeup Langauge","Hyper Text Markup Link"],
+                Answer: "Hyper Text Markup Langauge"
+            },
+            {
+                Question: "What is Hooks in react?",
                 Choices: ["Hyper Text Markup Langauge","Higher Text Markup Langauge","Hyper Text Makeup Langauge","Hyper Text Markup Link"],
                 Answer: "Hyper Text Markup Langauge"
             }

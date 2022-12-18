@@ -12,8 +12,7 @@ export default function Quizes() {
             <h1>{common.quizIntroduction}</h1>
             <h2>{common.quizQoute}</h2>
         </header>
-        <div className={styles.button_wrapper}>
-            
+        <div className={styles.button_wrapper}>            
             <button onClick={()=>navigate('/multipleChoice')}>{common.multipleChoice}</button>
             <button onClick={()=>navigate('/trueOrfalse')}>{common.trueOrfalse}</button>
         </div>

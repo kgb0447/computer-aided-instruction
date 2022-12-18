@@ -22,7 +22,7 @@ export const Routes =()=>{
                 element: <Quizes/>
             },
             {
-                path: '/multipleChoice',
+                path: '/multipleChoice/:id',
                 element: <MultipleChoice/>
             },
             {

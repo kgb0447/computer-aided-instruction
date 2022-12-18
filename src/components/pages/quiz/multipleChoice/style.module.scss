@@ -1,3 +1,4 @@
+@import '../../../../global/style.module.scss';
 .multipleChoice_container{
     background: red;
     
@@ -8,6 +9,37 @@
         border: solid 0.5px gray;
         padding: 10px;
 
+        button{
+            width: 100px;
+            height: 50px;
+            margin-right: 10px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+
+            &:hover{
+                background-color: rgb(142, 173, 96);
+                color: #ffff;
+            }
+        }
+        .question_container{
+            width: 100%;
+            background: yellow;
+            display: flex;
+            flex-direction: column;
+
+            .choices_wrapper{
+                background: green;
+                display: flex;
+
+                input[type="radio"]{
+                    
+                    width: 15px;
+                    margin-right: 5px;
+                    cursor: pointer;
+                }
+            }
+        }
         .question{
             width: 100%;
             padding: 40px 10px;
@@ -29,5 +61,71 @@
                 cursor: pointer;
             }
         }
+        form{
+            width: 80%;
+            height: 400px;
+            background: yellow;
+            
+            
+            input[type="submit"]{
+                width: 100px;
+                height: 50px;
+                border: none;
+                border-radius: 6px;
+                margin-top: 20px;
+            }
+            
+        }
+   
+    } 
+    .overlay{
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        z-index: 15;
+        background: rgba(128, 128, 128, 0.629);
     }
+    .modal{
+        position: fixed;
+        width: 80%;
+        height:80vh;
+        z-index: 20;
+        background: yellow;
+        top: 50%;
+        left: 50%;
+        translate: -50% -50%;
+
+        header{
+            display: flex;
+            align-items: center;
+            flex-grow: 0;
+            width: 100%;
+            height: 50px;
+            background: $sidebar_item_bg;
+            padding: 0 5px;
+
+            .close_icon{
+                font-size: 26px;
+                margin-left: auto;
+                color: #ffff;
+                cursor: pointer;
+            }
+        }
+        footer{
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background: $sidebar_bg;
+            padding: 2px 5px;
+            button{
+                width: 100px;
+                height: 40px;
+                cursor: pointer;
+            }
+        }
+       
+
+    }   
 }

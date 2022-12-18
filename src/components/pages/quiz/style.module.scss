@@ -77,4 +77,29 @@
         
 
     }
+    ul{
+        list-style: none;
+        width: 100vw;
+        display: flex;
+        background: yellow;
+        padding:  20px 0;
+        justify-content: center;
+
+        li{
+            margin-right: 20px;
+            width: 100px;
+            height: 40px;
+            background: gray;
+            border-radius: 6px;
+            text-align: center;
+            padding: 5px;
+            cursor: pointer;
+            color: #ffff;
+            transition: 0.6s ease-in-out ;
+
+            &:hover{
+                scale: 1.1;
+            }
+        }
+    }
 }

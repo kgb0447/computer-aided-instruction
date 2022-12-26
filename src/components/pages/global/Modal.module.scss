@@ -1,0 +1,77 @@
+@import '../../../global/style.module.scss';
+.modal_overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(128, 128, 128, 0.582);
+    
+
+    .modal_container{
+        width: 60%;
+        height: 80%;
+        background: green;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+
+        header{
+            position: relative;
+            width: 100%;
+            background: rgb(20, 20, 20);
+            color: #fff;
+            padding: 2px 5px;
+
+            h1{
+                
+            }
+        }
+        section{
+            .button_wrapper{
+                padding: 0 5px;
+                width: 30%;
+                position: absolute;
+                bottom: 4px;
+                right: 4px;
+                display: flex;
+                justify-content: space-between;
+                background: yellow;
+                
+                
+            
+                button{
+                    width: 100px;
+                    height: 50px;
+                    cursor: pointer;
+                    border: none;
+                    border-radius: 4px;
+                    background: $sidebar_bg;
+                    color: #ffff;
+                    letter-spacing: 1.4px;
+                    font-size: 18px;
+                    transition: 0.6s;
+
+                    &:hover{
+                        background: $blue_theme_color;
+                    }
+                    
+
+                    .close{
+                        position: absolute;
+                        top: 5px;
+                        right: 4px;
+                        font-size: 26px;
+                        cursor: pointer;
+                    }
+                    .try_again{
+
+                    }
+
+                }
+            }
+        }
+    }
+    
+}

@@ -11,5 +11,6 @@ export const common = {
     practiceCode: "Practice Codes",
     multipleChoice: "Multiple Choice",
     trueOrfalse: "True or False",
+    quizResultMessage: "Your Quiz Results for "
     
 }

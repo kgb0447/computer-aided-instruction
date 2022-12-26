@@ -1,13 +1,29 @@
 @import '../../../../global/style.module.scss';
 .multipleChoice_container{
     background: red;
+
+    .start_section{
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: gray;
+        font-size: 40px;
+        text-align: center;
+        line-height: 100px;
+        cursor: pointer;
+    }
     
     .quiz_container{
+        position: relative;
+        display: flex;
         margin: auto;
         width: 70%;
         height: 700px;
         border: solid 0.5px gray;
         padding: 10px;
+        border: solid #fff;
 
         button{
             width: 100px;
@@ -62,6 +78,7 @@
             }
         }
         form{
+            
             width: 80%;
             height: 400px;
             background: yellow;

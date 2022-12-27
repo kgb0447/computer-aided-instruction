@@ -7,8 +7,6 @@ import {Modal} from '../../global/Modal'
 import { common } from '../../../../data/common';
 import { Timer } from '../../global/Timer';
 import { useAppDispatch } from '../../../../reducers/hooks';
-import { timerSlice } from '../../../../reducers/timer_slice';
-import { stopCountdown } from '../../../../reducers/timer_slice';
 
 export default function MultipleChoice() {
 
@@ -25,15 +23,16 @@ export default function MultipleChoice() {
   const [isStartQuiz,setIsStartQuiz] = useState<React.SetStateAction<boolean>>(false);
   const [isStartTimer,setIsStartTimer] = useState<React.SetStateAction<boolean>>(false)
 
+
   enum quizLength {
     hard = 20,
     intermediate = 15,
     easy = 10
   }
 
-  const handleSubmit = (e:any)=>{
+  const handleSubmit = (e: any) =>{
     e.preventDefault();
-    for(let value of e.target.children){
+     for(let value of e.target.children){
       if(value.checked){
         console.log(e)
         if(value.value === SHUFFLED_ITEMS[showedQuestion].Answer){
@@ -54,7 +53,6 @@ export default function MultipleChoice() {
   }
 
   const handleNext = () => {
-
     if (showedQuestion === quizLength.easy) {
       setShowScore(true)
       return null
@@ -62,7 +60,7 @@ export default function MultipleChoice() {
     } else {
       setShowedQuestion((prev) => prev + 1);
     }
-    dispatch(stopCountdown());
+    
   };
 
  
@@ -100,14 +98,14 @@ export default function MultipleChoice() {
           <input type="submit" name="Submit" ref={inputSubmitRef} disabled/>
           </form>
           {/* @ts-ignore */}
-          <Timer isTriggered={isStartTimer} />
+          <Timer resetTriger = {(e)=>handleSubmit(e)} handleNext={handleNext}
+           />
         </div>
         ) : null
       }
       
         {/* @ts-ignore */}
         {showScore ? <Modal inheritedState={scoreState} message={`${common.quizResultMessage} ${id}`} inheritedStateDispatch={{setShowScore,setScoreState}}/> : null}
-        
     </div>
   )
 }

@@ -1,42 +1,43 @@
 import React from 'react'
 import styles from './Timer.module.scss'
 import { useState,useEffect,useRef } from 'react'
-import { useAppDispatch } from '../../../reducers/hooks'
+import { useAppDispatch,useAppSelector } from '../../../reducers/hooks'
+import { startCountdown,stopCountDown,resetCountDown } from '../../../reducers/timer_slice'
 
-export function Timer() {
+export function Timer({resetTriger,handleNext}:{resetTriger:any,handleNext:any}) {
+    const dispatch = useAppDispatch();
+    const timer = useAppSelector(state => state.timerSlice.value);
+    const isTimerStart = useAppSelector(state => state.timerSlice.isStart)
     const [time,setTime] = useState(10)
-    const [isStartTimer,setIsStartTimer] = useState(false);
-    const [myTime,setMyTime] = useState(0)
+    const [isStart,setIsStart] = useState(true)
+    const [myTime,setMyTime] = useState<any>(0)
 
 
-    useEffect(() => {
-        let interval : any= null;
-        if(isStartTimer){
-            interval = setInterval(()=>{
-                setTime(prev=> prev -= 1)
-            },1000)
-
-            setMyTime(interval)
-        }
-        else{
-            clearInterval(myTime)
-        }
-    }, [])
     
 
+    
    const startCountDown = () => {
-    setIsStartTimer(true)
+    setMyTime(setInterval(()=> dispatch(startCountdown()),1000));
+    dispatch(resetCountDown())
+    return resetTriger(handleNext())
    }
-   const stopCountDown = () => {
-    setIsStartTimer(false)
-    setTime(10 + time)
+
+   useEffect(()=>{
+      if(timer === 0 ){
+        clearInterval(myTime);
+      } 
+      
+   },[timer])
+
+   const stopCountDowns = () =>{
+    dispatch(stopCountDown())
    }
   return (
     <div className={styles.timer_container}>
         <div className={styles.time_label}>Time Remaining:</div>
-        <div className={styles.time}>{time}</div>
-        {/* <button onClick={startCountDown}>Start</button>
-        <button onClick={stopCountDown}>Stop</button> */}
+        <div className={styles.time}>{timer}</div>
+        <button onClick={startCountDown}>Start</button>
+        <button onClick={stopCountDowns}>Stop</button>
     </div>
   )
 }

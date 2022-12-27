@@ -1,26 +1,35 @@
-import { createSlice,PayloadAction } from "@reduxjs/toolkit";
-import { Timer } from "../components/pages/global/Timer";
+import { createSlice } from "@reduxjs/toolkit";
 
 interface Timer_Type{
-    value:number;
+    value:any,
     isStart:boolean
 }
 
 const initialState: Timer_Type ={
-    value: 10,
-    isStart: true,
+    value: 10, 
+    isStart: true
+    
 }
 
 export const timerSlice = createSlice({
     name:'timer',
     initialState,
     reducers: {
-        stopCountdown: (state:any ,action: PayloadAction)  => {
-            // state.value =  action.payload + state.value;
-            state.isStart = false;
+        startCountdown: (state):any=> {
+            if(state.isStart){
+                state.value =  state.value - 1
+            }; 
+
+        },
+        stopCountDown: (state)  => {
+            state.value = state.value + 10
+            
+        },
+        resetCountDown: (state) => {
+            state.value = initialState.value
         }
     }
 })
 
-export const {stopCountdown} = timerSlice.actions;
-export default timerSlice.reducer;
+    export const {startCountdown,stopCountDown,resetCountDown} = timerSlice.actions
+    export default timerSlice.reducer

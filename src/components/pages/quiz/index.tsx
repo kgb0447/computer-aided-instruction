@@ -12,7 +12,6 @@ export default function Quizes() {
       setCategory(true)
     }
     const handleStartQuiz = (arrValue:string) =>{
-      
       const selected = multipleChoiceQuestions.filter((item:any)=> arrValue === item)[0].Category;
       console.log(selected,"test sleect");
       navigate(`/multipleChoice/${selected}`)

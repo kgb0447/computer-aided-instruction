@@ -6,7 +6,8 @@ import { useParams } from 'react-router-dom'
 import {Modal} from '../../global/Modal'
 import { common } from '../../../../data/common';
 import { Timer } from '../../global/Timer';
-import { useAppDispatch } from '../../../../reducers/hooks';
+import { useAppDispatch,useAppSelector } from '../../../../reducers/hooks';
+import { stopCountDown } from '../../../../reducers/timer_slice';
 
 export default function MultipleChoice() {
 
@@ -21,7 +22,6 @@ export default function MultipleChoice() {
   const quizItems = multipleChoiceQuestions[selectedQuizCat].Items; 
   const SHUFFLED_ITEMS = [...quizItems].sort(()=> Math.random() > 0.5 ? 1 : -1 ).slice(0,quizItems.length);
   const [isStartQuiz,setIsStartQuiz] = useState<React.SetStateAction<boolean>>(false);
-  const [isStartTimer,setIsStartTimer] = useState<React.SetStateAction<boolean>>(false)
 
 
   enum quizLength {
@@ -43,6 +43,7 @@ export default function MultipleChoice() {
         }
 
         handleNext();
+        dispatch(stopCountDown());
         return (
           value.checked = false,
           inputSubmitRef.current.disabled = inputSubmitRef.current
@@ -50,6 +51,7 @@ export default function MultipleChoice() {
         )
       }
     }
+    
   }
 
   const handleNext = () => {
@@ -70,7 +72,6 @@ export default function MultipleChoice() {
 
   const handleStart = () => {
     setIsStartQuiz(true);
-    setIsStartTimer(true)
   }
   return (
     <div className={styles.multipleChoice_container}>
@@ -103,7 +104,6 @@ export default function MultipleChoice() {
         </div>
         ) : null
       }
-      
         {/* @ts-ignore */}
         {showScore ? <Modal inheritedState={scoreState} message={`${common.quizResultMessage} ${id}`} inheritedStateDispatch={{setShowScore,setScoreState}}/> : null}
     </div>

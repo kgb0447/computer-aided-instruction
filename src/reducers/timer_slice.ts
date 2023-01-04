@@ -22,12 +22,12 @@ export const timerSlice = createSlice({
 
         },
         stopCountDown: (state)  => {
-            state.value = state.value + 10
+            state.value = state.value + initialState.value;
             
         },
         resetCountDown: (state) => {
             state.value = initialState.value
-        }
+        },
     }
 })
 

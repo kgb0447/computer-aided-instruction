@@ -2,12 +2,12 @@ import React from 'react'
 import styles from './Modal.module.scss'
 import { useNavigate } from 'react-router-dom'
 interface ModalPropTypes {
-    inheritedState: number|boolean,
+    inheritedState: number;
     message: string,
     inheritedStateDispatch?: any
 }
 export const Modal  = ({
-    inheritedState,
+    inheritedState = 0,
     message,
     inheritedStateDispatch,
 } : ModalPropTypes)=> {
@@ -21,7 +21,7 @@ export const Modal  = ({
 
     }
     const handleTryAgain = () => {
-        inheritedStateDispatch(false)
+        inheritedStateDispatch.setShowScore(false);
         window.location.reload()
     }
 

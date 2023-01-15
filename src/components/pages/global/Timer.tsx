@@ -12,7 +12,7 @@ export function Timer({resetTriger,handleNext}:{resetTriger:any,handleNext:any})
    useEffect(()=>{
       if(timer === 0){
         dispatch(stopCountDown());
-        return handleNext()
+        handleNext()
       } 
    },[timer])
 

@@ -6,7 +6,7 @@ export const Header = () => {
             <header>{common.Project_Title}</header>
             <nav>
                 <button>Home</button>
-                <button>About Us</button>
+                <button>About</button>
                 <button>FAQs</button>
             </nav>
         </div>

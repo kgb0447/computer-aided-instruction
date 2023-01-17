@@ -11,7 +11,7 @@ export const FloatRightCards = () =>{
                 </header>
                 <button onClick={()=>navigate('/quizPage')}>{common.takeQuiz}</button>
                 <button>{common.watchVideo}</button>
-                <button>{common.practiceCode}</button>
+                <button onClick={() => navigate('/codePage')}>{common.practiceCode}</button>
             </div>
             <div className={styles.button_wrapper}>
             

@@ -5,6 +5,7 @@ import { MainPage } from "../pages/main"
 import MultipleChoice from "../pages/quiz/multipleChoice"
 import Quizes from "../pages/quiz"
 import TrueOrFalse from "../pages/quiz/trueOrfalse"
+import COdePage from "../pages/codePage"
 export const Routes =()=>{
 
     const myRuotes = useRoutes( 
@@ -28,6 +29,10 @@ export const Routes =()=>{
             {
                 path: '/trueOrfalse',
                 element: <TrueOrFalse/>
+            },
+            {
+                path: '/codePage',
+                element: <COdePage/>
             },
             {
                 path:'*',

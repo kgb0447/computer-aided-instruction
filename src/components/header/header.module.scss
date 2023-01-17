@@ -1,0 +1,31 @@
+@import '../../themes/themeColor.module.scss';
+.header {
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    padding: 0 10px;
+    display: flex;
+    flex-shrink: 0;
+    justify-content: space-between;
+    background: $headere_bg;
+    z-index: 200;
+    color: #fff;
+
+    h1{
+
+    }
+
+    nav{
+        .navItems{
+            width: 80px;
+            height: 80%;
+            background: green;
+            margin-right: 10px;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            
+        }
+    }
+}

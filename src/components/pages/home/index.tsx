@@ -9,6 +9,7 @@ import { setSelectedCourse } from '../../../reducers/mapped_course_slice'
 import classNames from 'classnames'
 import { FloatRightCards } from '../main/componets/floatRightCards'
 import { useContext,useEffect, useRef, useState } from 'react'
+import HeaderV2 from '../../header'
 
 export const Homepage = () => {
 
@@ -20,6 +21,11 @@ export const Homepage = () => {
    
     const itemRef = useRef([])
 
+    const navigation :any = [
+        "About",
+        "FaQs",
+        "Contact Us"
+    ]
     
 
     // useEffect(()=>{
@@ -47,7 +53,7 @@ export const Homepage = () => {
 
     return(
         <div className={styles.home}>
-            <Header/>
+            <HeaderV2 navigation={navigation}/>
             <video src={Video_Config.home_bg_video} autoPlay muted loop></video>
             <div className={styles.content_wrapper}>
                 {

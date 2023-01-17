@@ -21,6 +21,7 @@ export const Left_sidebar = () =>{
     return(
         <div className={styles.left_sidebar}>
            <ul>
+            ff
             {
               selectedCourse.map((item,index) => (
                 <li key={index} onClick={()=>handleClick(index)} className={classNames({'active': isActive})}>

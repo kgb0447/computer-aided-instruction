@@ -5,13 +5,16 @@ import { Left_sidebar } from "./componets/left_sidebar/index";
 import { Header } from "./componets/header";
 import { ScrollContext } from "../home/context/scrollContext";
 import { FloatRightCards } from "./componets/floatRightCards";
-
+import HeaderV2 from '../../header';
+import { courses } from '../../../global/data';
 export  interface UserProps{
     scrollHandler: any,
     handler:any
 }
 export const MainPage = () =>{
 
+    const GET_SUBJECTS = courses.map((item:any) => item.Subject);
+    console.log(GET_SUBJECTS,"eddd");
     const itemsRef = useRef<any[]>([]);
     const selectedCourse = useAppSelector(state=> state.myMappedCourse.selectedCourse)
 
@@ -25,7 +28,8 @@ export const MainPage = () =>{
     return(
         <div className={styles.main_page}>
             <ScrollContext.Provider value={{scrollHandler,itemsRef}}>
-            <Header/> 
+            <HeaderV2 navigation={GET_SUBJECTS}/>
+            {/* <Header/> */}
             <section>   
                 <Left_sidebar/> 
                 <div className={styles.wrapper} >  

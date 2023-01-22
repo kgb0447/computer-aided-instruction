@@ -24,7 +24,7 @@ export const MainPage = () =>{
             behavior:"smooth"
         });
     } 
-
+  
     return(
         <div className={styles.main_page}>
             <ScrollContext.Provider value={{scrollHandler,itemsRef}}>

@@ -37,7 +37,7 @@ export const Header = () =>{
             <nav>
                 {
                 courseSubjects.map((item,index)=>(
-                    <div key={index} onClick={()=> handleSelectCourse(item)}>fff{item}</div>
+                    <div key={index} onClick={()=> handleSelectCourse(item)}>{item}</div>
                 ))
                 }
             </nav>

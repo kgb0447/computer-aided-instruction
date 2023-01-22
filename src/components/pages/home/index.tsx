@@ -12,7 +12,7 @@ import { useContext,useEffect, useRef, useState } from 'react'
 import HeaderV2 from '../../header'
 
 export const Homepage = () => {
-
+    const {id} = useParams();
     const navigate = useNavigate();
     const dispatch = useAppDispatch();
     const subjects = useAppSelector(state => state.myMappedCourse.courseSubject)
@@ -50,7 +50,7 @@ export const Homepage = () => {
             dispatch(setSelectedCourse(selectedIndex))
         )
     }
-
+console.log({id},"test Id");
     return(
         <div className={styles.home}>
             <HeaderV2 navigation={navigation}/>

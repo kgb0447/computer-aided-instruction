@@ -1,4 +1,3 @@
-import React from 'react'
 import styles from './Modal.module.scss'
 import { useNavigate } from 'react-router-dom'
 interface ModalPropTypes {
@@ -10,6 +9,7 @@ export const Modal  = ({
     inheritedState = 0,
     message,
     inheritedStateDispatch,
+    
 } : ModalPropTypes)=> {
 
     const{setShowScore,setScoreState} = inheritedStateDispatch;
@@ -17,8 +17,7 @@ export const Modal  = ({
     const handleCloseModal = () => {
         setShowScore(false)
         naviagate('/quizPage');
-        setScoreState(0)
-
+        setScoreState(0);
     }
     const handleTryAgain = () => {
         inheritedStateDispatch.setShowScore(false);

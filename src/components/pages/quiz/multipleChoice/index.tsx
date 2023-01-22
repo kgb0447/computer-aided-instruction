@@ -1,4 +1,4 @@
-import React, {  useEffect, useLayoutEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { multipleChoiceQuestions } from '../../../../data/multipleChoiceQuestions'
 import styles from './style.module.scss'
 import { Header } from '../../main/componets/header';
@@ -22,13 +22,12 @@ export default function MultipleChoice() {
   const quizItems = multipleChoiceQuestions[selectedQuizCat].Items; 
   const SHUFFLED_ITEMS = [...quizItems].sort(()=> Math.random() > 0.5 ? 1 : -1 ).slice(0,quizItems.length);
   const [isStartQuiz,setIsStartQuiz] = useState<React.SetStateAction<boolean>>(false);
-  const timer = useAppSelector(state => state.timerSlice.value);
 
 
   enum quizLength {
     hard = 20,
     intermediate = 15,
-    easy = 10
+    easy = 2
   }
 
   const handleSubmit = (e: any) =>{
@@ -39,9 +38,10 @@ export default function MultipleChoice() {
         if(value.value === SHUFFLED_ITEMS[showedQuestion].Answer){
           setScoreState((prev:number) => prev + 1)
         }
-        else if(value.value === null || value.value === undefined){
-          return scoreState;
+        else{
+          console.log("wrong");
         }
+
         handleNext();
         dispatch(stopCountDown());
         return (
@@ -49,22 +49,25 @@ export default function MultipleChoice() {
           inputSubmitRef.current.disabled = inputSubmitRef.current
           
         )
-      } 
-    } 
+      }
+    }
+    
   }
 
   const handleNext = () => {
     if (showedQuestion === quizLength.easy) {
-      setShowScore(true);
-      localStorage.setItem("Top Score",JSON.stringify(scoreState))
+      setShowScore(true)
       return null
      
     } else {
       setShowedQuestion((prev) => prev + 1);
     }
-    
   };
-  console.log(showedQuestion,"rrrr")
+
+  useEffect(() => {
+    handleNext();
+  }, [])
+  
  
   const handleCheck = () =>{
     inputSubmitRef.current.disabled = !inputSubmitRef.current;
@@ -99,7 +102,7 @@ export default function MultipleChoice() {
           <input type="submit" name="Submit" ref={inputSubmitRef} disabled/>
           </form>
           {/* @ts-ignore */}
-          <Timer resetTriger = {handleSubmit} handleNext={handleNext}
+          <Timer resetTriger = {(e)=>handleSubmit(e)} handleNext={handleNext}
            />
         </div>
         ) : null

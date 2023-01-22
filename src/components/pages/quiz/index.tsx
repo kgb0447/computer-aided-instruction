@@ -1,9 +1,10 @@
-import { useState }from 'react'
+import React, { useState }from 'react'
 import { Header } from '../main/componets/header'
 import styles from './style.module.scss'
 import { useNavigate } from 'react-router-dom'
 import { common } from '../../../data/common'
 import { multipleChoiceQuestions } from '../../../data/multipleChoiceQuestions'
+import HeaderV2 from '../../header'
 export default function Quizes() {
     const navigate = useNavigate();
     console.log(multipleChoiceQuestions)
@@ -18,10 +19,10 @@ export default function Quizes() {
     }
   return (
     <div className={styles.quiz_container}>
-        <Header/>
+        <HeaderV2 navigation={['']}/>
         {
           !category ? (
-            <>
+            <React.Fragment>
               <header>
                 <h1>{common.quizIntroduction}</h1>
                 <h2>{common.quizQoute}</h2>
@@ -30,7 +31,7 @@ export default function Quizes() {
                   <button onClick={handleSelectCategory}>{common.multipleChoice}</button>
                   <button onClick={()=>navigate('/trueOrfalse')}>{common.trueOrfalse}</button>
               </div>
-            </>
+            </React.Fragment>
           ) : null
         }
         

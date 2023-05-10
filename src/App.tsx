@@ -1,14 +1,13 @@
-import { Routes } from './components/routes/routes';
-import {common} from './data/common'
-import {BrowserRouter} from 'react-router-dom'
+
 import './App.scss';
+import Header from './component/header/Header';
+import Slider from './components/slider/Slider';
 
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
-      <Routes/>
-      </BrowserRouter>
+      <Header/>
+      <Slider />
     </div>
   );
 }

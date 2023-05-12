@@ -1,0 +1,11 @@
+@import '../../styles/helpers.scss';
+
+.title {
+    position: relative;
+    top: 0;
+    width: 100%;
+    height: $header_height;
+    color: #fff;
+    font-family: 'Sofia Pro Bold';
+    font-size: 4rem;
+}

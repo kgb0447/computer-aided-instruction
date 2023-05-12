@@ -1,0 +1,30 @@
+@import '../../styles/helpers.scss';
+
+.wrapper {
+    outline: inset red 1px;
+    width: 100%;
+    height: calc(100dvh - $header_height);
+    padding: 0 20px;
+   
+    
+    .cardContainer {
+        width: 80%;
+        margin-left: auto;
+        display: grid; 
+        grid-template-columns: repeat(3, 1fr);
+        // grid-template-rows: repeat(3, 1fr);
+        gap: 20px;
+        justify-items: center;
+    }
+    
+}
+
+:global {
+    .ant-card {
+        margin-top: 40px;
+        width: 300px;
+        outline: inset red 1px;
+        cursor: pointer;
+
+    }
+}

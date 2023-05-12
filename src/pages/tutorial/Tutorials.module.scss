@@ -1,0 +1,38 @@
+@import '../../styles/helpers.scss';
+
+.container {
+    position: relative;
+    top: $header_height;
+    width: 100%;
+    @include h_minus_header;
+
+    .leftNav {
+        width: 100% !important;
+        height: 100%;
+        background-color: $primary_color;
+
+        .items {
+            width: 100%;
+            height: $header_height / 1.5;
+            margin-top: 4px;
+            background: $gray_theme;
+            @include listItems;
+
+        }
+    }
+}
+
+:global {
+    .ant-drawer-content-wrapper {
+        width: 18% !important;
+        @include h_minus_header;
+
+        .ant-drawer-body {
+            padding: 4px;
+        }
+        .ant-drawer-close {
+            display: none;
+        }
+    }
+    
+}

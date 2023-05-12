@@ -1,13 +1,16 @@
 
-import './App.scss';
-import Header from './component/header/Header';
-import Slider from './components/slider/Slider';
+import Header from './components/header/Header';
+import PageRoute from './routes/PageRoute';
+import { BrowserRouter } from 'react-router-dom';
+import appStyle from './App.module.scss';
 
 function App() {
   return (
-    <div className="App">
+    <div className={appStyle.App}>
       <Header/>
-      <Slider />
+      <BrowserRouter>
+        <PageRoute />
+      </BrowserRouter>
     </div>
   );
 }

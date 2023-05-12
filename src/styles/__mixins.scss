@@ -1,0 +1,13 @@
+
+@mixin listItems {
+    border-radius: $slider_radius;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto';
+    cursor: pointer;
+}
+
+@mixin h_minus_header {
+    height: calc(100dvh - $header_height);
+}

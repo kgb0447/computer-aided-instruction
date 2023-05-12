@@ -1,0 +1,85 @@
+@import '../../styles/helpers.scss';
+
+
+.contianer {
+  position: relative;
+  top: $header_height;
+  width: 100%;
+  height: 100dvh;
+  background: $gray_theme;
+
+  section {
+    width: 100%;
+    height: calc(100dvh - $header_height);
+    margin-top: 100px;
+  }
+
+  .greeting {
+    position: absolute;
+    left: 4%;
+    width: 700px;
+    font-size: 5rem;
+    font-family: 'Sofia Pro Bold Italic';
+    font-weight: 900;
+    text-align: left;
+    text-shadow: 20px 4px 8px $strong_gray_theme;
+    letter-spacing: 3px;
+    color: #ffffff;
+    word-wrap: break-word;  
+    z-index: 20;
+   
+    .middle {
+      text-align: center;
+    }
+    .bottom {
+      text-align: right;
+    }
+
+    .btnWrapper {
+      margin: 20px 0 0 40px;
+      width: 60%;
+      height: 60px;
+      display: flex;
+      justify-content: space-evenly;
+    
+      .btn {
+        margin-right: 20px;
+        border: solid 1px $primary_color;
+        border-radius: 12px;
+        width: 150px;
+        height: 60px;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        font-family: 'Sofia Pro Medium';
+        font-size: 1.2rem;
+        letter-spacing: 0.1px;
+        text-shadow: none;
+        transition: 0.6s ease-out;
+        cursor: pointer;
+      }
+    }
+  }
+
+  //Prop classes
+  .followBtn {
+    background: $gray_theme;
+  
+    &:hover {
+      color: $primary_color;
+      background: $gray_theme;
+      border: 1px solid $strong_gray_theme;
+    }
+  }
+  .startBtn {
+    background: $primary_color;
+    color: $strong_gray_theme;
+
+    &:hover {
+      color: $primary_color;
+      background: $gray_theme;
+      border: 1px solid $strong_gray_theme;
+    }
+  }
+
+}

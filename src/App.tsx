@@ -7,8 +7,8 @@ import appStyle from './App.module.scss';
 function App() {
   return (
     <div className={appStyle.App}>
-      <Header/>
       <BrowserRouter>
+        <Header/>
         <PageRoute />
       </BrowserRouter>
     </div>

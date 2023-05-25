@@ -81,5 +81,8 @@
       border: 1px solid $strong_gray_theme;
     }
   }
-
+  .homeStyleSlider {
+    width:60%;
+    margin: $outer_horizontal_space $outer_horizontal_space 0 auto;
+  }
 }

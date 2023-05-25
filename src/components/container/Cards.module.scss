@@ -1,7 +1,6 @@
 @import '../../styles/helpers.scss';
 
 .wrapper {
-    outline: inset red 1px;
     width: 100%;
     height: calc(100dvh - $header_height);
     padding: 0 20px;
@@ -23,7 +22,6 @@
     .ant-card {
         margin-top: 40px;
         width: 300px;
-        outline: inset red 1px;
         cursor: pointer;
 
     }

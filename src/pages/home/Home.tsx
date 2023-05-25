@@ -19,7 +19,7 @@ export default function Home() {
             <NavBtn label={common.followForMore} path={'/tutorials'} inheritStyle={homeStyle.followBtn} />
           </div>
         </div>
-        <CardSlider />
+        <CardSlider inheritedStyle={homeStyle.homeStyleSlider} autoplay={true} />
       </section>
         <Cards/>
         <section></section>
